@@ -1,9 +1,31 @@
-# list
+# dictionary
 
-shop = ["수박", "사과", "참외"]
+bob = {
+    "name":"bob",
+    "age":22,
+    "address":"Seoul"
+}
 
-print(shop[0]) # 리스트의 시작은 0부터
-print(shop[-1]) # 역순으로 -> 참외
-print(shop[-2]) # 사과
-print(shop[-3]) # 수박
-#print(shop[-4]) # IndexError 범위를 벗어남
+print(bob["name"])
+print(bob["age"])
+print(bob["address"])
+
+people = [
+{
+    "name":"bab",
+    "age":22,
+    "address":"Seoul"
+},
+{
+    "name":"bib",
+    "age":22,
+    "address":"Seoul"
+},
+{
+    "name":"bub",
+    "age":22,
+    "address":"Seoul"
+}
+]
+
+print(people[0]["name"])
