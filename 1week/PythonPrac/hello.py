@@ -9,3 +9,6 @@ class Person:
 
 kihye = Person("기혜")
 kihye.sayHello("정민")
+
+jeongmin = Person("정민")
+jeongmin.sayHello("기혜")
