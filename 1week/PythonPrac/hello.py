@@ -1,9 +1,15 @@
-# 조건문
+# 반복문
 
-def is_adult(age):
-    if age > 20:
-        print("성인입니다.")
-    else:
-        print("미성년자입니다.")
+fruitsEnglish = ['apple','banana','orange']
 
-is_adult(20)
+for fruit in fruitsEnglish:
+    print(fruit)
+
+fruits = ['사과','배','배','감','수박','귤','딸기','사과','배','수박']
+
+count = 0
+
+for f in fruits:
+    if f == "사과":
+        count += 1
+print(count)
