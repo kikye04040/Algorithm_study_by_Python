@@ -1,7 +1,9 @@
-# function
+# 조건문
 
-def sum(a, b):
-    return a + b
+def is_adult(age):
+    if age > 20:
+        print("성인입니다.")
+    else:
+        print("미성년자입니다.")
 
-print(sum(1, 2))
-print(sum(3, 4))
+is_adult(20)
