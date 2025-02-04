@@ -1,3 +1,5 @@
+# boolean
+
 name = 'bob'
 age = 14
 
