@@ -24,5 +24,3 @@ ln = LinkedList()
 ln.append(3)
 ln.append(5)
 ln.append(7)
-
-print(ln)
