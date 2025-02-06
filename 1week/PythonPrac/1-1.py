@@ -14,4 +14,3 @@ def is_palindrome(s):
 
 print(is_palindrome(str1))
 print(is_palindrome(str2))
-
