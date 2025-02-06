@@ -17,3 +17,27 @@ def isPalindrome(ln):
             return False
 
     return True
+
+
+# 유효한 괄호 prac
+
+def test_problem_stack(s):
+    pair = {
+        '}': '{',
+        ')': '(',
+        ']': '[',
+    }
+    opener = "({["
+    stack = []
+
+    for char in s:
+        if char in opener:
+            stack.append(char)
+        else:
+            if not stack:
+                return False
+            top = stack.pop()
+            if pair[char] != top:
+                return False
+
+    return not stack

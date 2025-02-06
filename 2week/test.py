@@ -1,6 +1,6 @@
 # Linked List
 from structures import LinkedList, Stack
-from prac import isPalindrome
+from prac import isPalindrome, test_problem_stack
 
 l1 = LinkedList()
 for num in [1, 2, 2, 1]:
@@ -34,3 +34,15 @@ def test_stack():
     assert stack.is_empty()
 
 test_stack()
+
+
+# 유효한 괄호 test
+
+assert test_problem_stack("()")
+assert test_problem_stack("()[]{}")
+assert test_problem_stack("({[][]})")
+assert test_problem_stack("({[]})")
+assert not test_problem_stack("(]")
+assert not test_problem_stack("(()]")
+assert not test_problem_stack("(((])")
+assert not test_problem_stack("((())")
