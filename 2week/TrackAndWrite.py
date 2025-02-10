@@ -1,25 +1,26 @@
-# Stack
+# Queue
 
 class Node:
     def __init__(self, val = 0, next = None):
         self.val = val
         self.next = next
 
-class Stack:
+class Queue:
     def __init__(self):
-        self.top = None
+        self.front = None
 
     def push(self, value):
-        self.top = Node(value, self.top)
+        if not self.front:
+            self.front = Node(value)
+            return
 
     def pop(self):
-        if self.top is None:
+        if not self.front:
             return None
 
-        node = self.top
-        self.top = self.top.next
-
+        node = self.front
+        self.front = self.front.next
         return node.val
 
     def is_empty(self):
-        return self.top is None
+        return self.front is None
