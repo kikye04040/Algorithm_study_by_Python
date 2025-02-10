@@ -1,22 +1,25 @@
-# Linked List
+# Stack
 
-class ListNode:
+class Node:
     def __init__(self, val = 0, next = None):
         self.val = val
         self.next = next
 
-class LinkedList:
+class Stack:
     def __init__(self):
-        self.head = None
+        self.top = None
 
-    def append(self, val):
-        if not self.head:
-            self.head = ListNode(val, None)
-            return
+    def push(self, value):
+        self.top = Node(value, self.top)
 
-        node = self.head
+    def pop(self):
+        if self.top is None:
+            return None
 
-        while node.next:
-            node = node.next
+        node = self.top
+        self.top = self.top.next
 
-        node.next = ListNode(val, None)
+        return node.val
+
+    def is_empty(self):
+        return self.top is None
