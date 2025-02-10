@@ -1,5 +1,5 @@
 # Linked List
-from structures import LinkedList, Stack
+from structures import LinkedList, Stack, Queue
 from prac import isPalindrome, test_problem_stack
 
 l1 = LinkedList()
@@ -46,3 +46,23 @@ assert not test_problem_stack("(]")
 assert not test_problem_stack("(()]")
 assert not test_problem_stack("(((])")
 assert not test_problem_stack("((())")
+
+
+# Queue
+
+def test_queue():
+    queue = Queue()
+
+    queue.push(1)
+    queue.push(2)
+    queue.push(3)
+    queue.push(4)
+    queue.push(5)
+
+    assert queue.pop() == 1
+    assert queue.pop() == 2
+    assert queue.pop() == 3
+    assert queue.pop() == 4
+    assert queue.pop() == 5
+    assert queue.pop() is None
+    assert queue.is_empty()
