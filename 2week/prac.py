@@ -1,5 +1,3 @@
-from collections import deque
-
 def isPalindrome(ln):
     arr = []
     head = ln.head
@@ -43,13 +41,3 @@ def test_problem_stack(s):
                 return False
 
     return not stack
-
-
-# 줄서기 prac
-
-def test_problem_queue(num):
-    deq = deque([i for i in range(1, num + 1)])
-    while len(deq) > 1:
-        deq.popleft()
-        deq.append(deq.popleft())
-    return deq.popleft()
