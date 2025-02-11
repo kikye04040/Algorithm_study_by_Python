@@ -76,3 +76,79 @@ class Queue:
 
     def is_empty(self):
         return self.front is None
+
+
+# HashTable
+
+class HashNode:
+    def __init__(self, key=None, value=None):
+        self.key = key
+        self.value = value
+        self.next = None
+
+
+class HashTable:
+    def __init__(self):
+        self.size = 10
+        self.table = [None] * self.size
+
+    def _hash_function(self, key):
+        return key % self.size
+
+    def put(self, key, value):
+        index = self._hash_function(key)
+        if self.table[index] is None:
+            self.table[index] = HashNode(key, value)
+        else:
+            node = self.table[index]
+            while node.next is not None:
+                node = node.next
+            node.next = HashNode(key, value)
+
+    def get(self, key):
+        index = self._hash_function(key)
+        node = self.table[index]
+        while node is not None:
+            if node.key == key:
+                return node.value
+            node = node.next
+        return -1
+
+    def remove(self, key):
+        index = self._hash_function(key)
+        node = self.table[index]
+        prev_node = None
+        while node is not None:
+            if node.key == key:
+                if prev_node is None:
+                    self.table[index] = node.next
+                else:
+                    prev_node.next = node.next
+                return
+            prev_node = node
+            node = node.next
+
+
+# Binary Max Hip
+
+class BinaryMaxHeap:
+    def __init__(self):
+        # 계산 편의를 위해 0이 아닌 1번째 인덱스부터 사용한다.
+        self.items = [None]
+
+    def insert(self, k):
+        self.items.append(k)
+        self._percolate_up()
+
+    def _percolate_up(self):
+        # percolate: 스며들다.
+        cur = len(self.items) - 1
+        # left 라면 2*cur, right 라면 2*cur + 1 이므로 parent 는 항상 cur // 2
+        parent = cur // 2
+
+        while parent > 0:
+            if self.items[cur] > self.items[parent]:
+                self.items[cur], self.items[parent] = self.items[parent], self.items[cur]
+
+            cur = parent
+            parent = cur // 2
