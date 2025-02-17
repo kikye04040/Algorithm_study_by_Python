@@ -1,4 +1,4 @@
-from prac import dfs_recursive, dfs_stack, island_dfs_stack, island_dfs_recursive, bfs_queue
+from prac import dfs_recursive, dfs_stack, island_dfs_stack, island_dfs_recursive, bfs_queue, island_bfs
 
 graph = {
     1: [2, 5, 9],
@@ -62,3 +62,19 @@ graph = {
 }
 
 assert bfs_queue(graph, 1) == [1, 2, 5, 9, 3, 6, 8, 10, 4, 7]
+
+
+# BFS 섬의 개수
+
+assert island_bfs(grid=[
+    ["1", "1", "1", "1", "0"],
+    ["1", "1", "0", "1", "0"],
+    ["1", "1", "0", "0", "0"],
+    ["0", "0", "0", "0", "0"]
+]) == 1
+assert island_bfs(grid=[
+    ["1", "1", "0", "0", "0"],
+    ["1", "1", "0", "0", "0"],
+    ["0", "0", "1", "0", "0"],
+    ["0", "0", "0", "1", "1"]
+]) == 3
