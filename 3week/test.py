@@ -1,4 +1,4 @@
-from prac import dfs_recursive, dfs_stack, island_dfs_stack, island_dfs_recursive, bfs_queue, island_bfs
+from prac import dfs_recursive, dfs_stack, island_dfs_stack, island_dfs_recursive, bfs_queue, island_bfs, nqueen, binary_search
 
 graph = {
     1: [2, 5, 9],
@@ -78,3 +78,14 @@ assert island_bfs(grid=[
     ["0", "0", "1", "0", "0"],
     ["0", "0", "0", "1", "1"]
 ]) == 3
+
+
+# 백트래킹
+
+assert nqueen(4) == [[".Q..", "...Q", "Q...", "..Q."], ["..Q.", "Q...", "...Q", ".Q.."]]
+
+
+# 이진탐색
+
+assert binary_search(nums=[-1, 0, 3, 5, 9, 12], target=9) == 4
+assert binary_search(nums=[-1, 0, 3, 5, 9, 12], target=2) == -1
