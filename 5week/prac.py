@@ -9,7 +9,7 @@ def dijkstra(graph, start):
     q = []
     # 튜플일 경우 0번째 요소 기준으로 최소 힙 구조.
     # 첫 번째 방문 누적 비용은 0이다.
-    heapq.heappush(q, (0, start))
+    heapq.heappush(q, (0, start)) # 누적 비용, 노드 번호 순으로
     dist[start] = 0
 
     while q:
