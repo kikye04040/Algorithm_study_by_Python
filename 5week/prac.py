@@ -28,3 +28,31 @@ def dijkstra(graph, start):
                 heapq.heappush(q, (cost, adj))
 
     return dist
+
+
+# 네트워크 딜레이 타임 문제
+
+def delay_time(arr, n, k):
+    graph = {}
+
+    for u, v, w in arr:
+        if u not in graph:
+            graph[u] = []
+        graph[u].append((v, w))
+
+    Q = [(0, k)]
+    dist = {}
+
+    while Q:
+        time, node = heapq.heappop(Q)
+        if node not in dist:
+            dist[node] = time
+            if node in graph:
+                for v, w in graph[node]:
+                    alt = time + w
+                    heapq.heappush(Q, (alt, v))
+
+    if len(dist) == n:
+        return max(dist.values())
+
+    return -1
