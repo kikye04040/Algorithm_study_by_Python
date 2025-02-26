@@ -1,0 +1,39 @@
+### [홀수 vs 짝수](https://school.programmers.co.kr/learn/courses/30/lessons/181887?language=python3)
+
+- 내가 짠 코드
+```
+def solution(num_list):
+    evenTotal = 0
+    oddTotal = 0
+    idx = 1
+    
+    for num in num_list:
+        if idx % 2 == 0:
+            evenTotal += num
+        else:
+            oddTotal += num
+        idx += 1
+    
+    if evenTotal > oddTotal:
+        return evenTotal
+    elif evenTotal == oddTotal:
+        return oddTotal
+    else:
+        return oddTotal
+
+```
+
+- 지피티를 사용한 더 **파이썬**스러운 코드
+```
+def solution(num_list):
+    evenTotal = sum(num_list[1::2])  # 짝수 번째(1, 3, 5...) 요소의 합
+    oddTotal = sum(num_list[0::2])   # 홀수 번째(0, 2, 4...) 요소의 합
+    return max(evenTotal, oddTotal)  # 더 큰 값을 반환
+```
+
+✔️ PLUS
+
+- 파이썬의 **슬라이싱** 활용하기
+  - 파이썬에는 리스트의 인덱스를 슬라이싱 해주는 내장 함수 존재
+  - 슬라이싱 문법 : **리스트[시작인덱스:끝인덱스:증가값]** 로 나타낼 수 있음
+- 더 큰 값을 반환해주는 내장함수 **max()**를 사용하여 if문을 사용하지 않고 **최댓값 반환 가능**
