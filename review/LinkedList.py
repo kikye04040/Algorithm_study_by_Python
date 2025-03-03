@@ -10,10 +10,10 @@ class LinkedList:
     def append(self, val):
         if not self.head:
             self.head = LinkedNode(val, None)
-            return self.head
+            return
 
         node = self.head
         while node.next:
-            node.next = LinkedNode(val, None)
+            node = node.next
 
-        return node
+        node.next = LinkedNode(val, None)
