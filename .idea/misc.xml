@@ -3,4 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="Python 3.9 (sparta_algorithm)" />
   </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9 (Algorithm_study_by_Python)" project-jdk-type="Python SDK" />
 </project>
