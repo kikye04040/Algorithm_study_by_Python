@@ -5,14 +5,14 @@ class LinkedNode:
 
 class LinkedList:
     def __init__(self):
-        self.next = None
+        self.head = None
 
     def append(self, val):
-        if not self.next:
-            self.next = LinkedNode(val, None)
+        if not self.head:
+            self.head = LinkedNode(val, None)
 
-        node = self.next
+        node = self.head
         while node.next:
-            self.next = LinkedNode(val, None)
+            node = node.next
 
-        return node.val
+        node.next = LinkedNode(val, None)
