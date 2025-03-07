@@ -15,5 +15,4 @@ class LinkedList:
         node = self.head
         while node.next:
             node = node.next
-
         node.next = LinkedNode(val, None)
