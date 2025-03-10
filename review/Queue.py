@@ -8,20 +8,14 @@ class Queue:
         self.front = None
 
     def push(self, val):
-        if not self.front:
-            self.front = Node(val)
-            return
-        node = self.front
-        while node.next:
-            node = node.next
-        node.next = Node(val)
+        self.front = Node(val, self.front)
 
     def pop(self):
-        if not self.front:
+        if self.front is None:
             return None
         node = self.front
         self.front = self.front.next
-        return node.val
+        return node.next
 
     def is_empty(self):
         return self.front is None
