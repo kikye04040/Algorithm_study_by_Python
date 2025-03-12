@@ -13,7 +13,8 @@ class Queue:
             return
         node = self.front
         while node.next:
-            node.next = Node(val)
+            node = node.next
+        node.next = Node(val)
 
     def pop(self):
         if self.front is None:
