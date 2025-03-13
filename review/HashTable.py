@@ -104,3 +104,13 @@ class HashTable2:
 
     def _hash_function(self, key):
         return key % self.size
+
+    def put(self, key, value):
+        index = self._hash_function(key)
+        if self.table[index] is None:
+            self.table[index] = HashNode2(key, value)
+        else:
+            node = self.table[index]
+            while node.next is not None:
+                node = node.next
+            node.next = HashNode2(key, value)
