@@ -101,3 +101,6 @@ class HashTable2:
     def __init__(self):
         self.size = 10
         self.table = [None] * self.size
+
+    def _hash_function(self, key):
+        return key % self.size
