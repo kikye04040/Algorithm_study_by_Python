@@ -87,3 +87,17 @@ class HashTable:
                 self.table[index] = None  # 삭제 (None으로 설정)
                 return
             index = (index + 1) % self.size  # 선형 탐색으로 다음 칸 검사
+
+
+# 1. 체이닝
+
+class HashNode2:
+    def __init__(self, key=None, value=None):
+        self.key = key
+        self.value = value
+        self.next = None
+
+class HashTable2:
+    def __init__(self):
+        self.size = 10
+        self.table = [None] * self.size
