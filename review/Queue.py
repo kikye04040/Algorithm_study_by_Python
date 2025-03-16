@@ -11,6 +11,7 @@ class Queue:
         if not self.front:
             self.front = Node(val)
             return
+
         node = self.front
         while node.next:
             node = node.next
