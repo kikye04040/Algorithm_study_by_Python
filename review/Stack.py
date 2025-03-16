@@ -13,6 +13,7 @@ class Stack:
     def pop(self):
         if self.top is None:
             return None
+
         node = self.top
         self.top = self.top.next
         return node.val
