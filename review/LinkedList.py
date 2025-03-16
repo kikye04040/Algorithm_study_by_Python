@@ -11,7 +11,6 @@ class LinkedList:
         if not self.head:
             self.head = LinkedNode(val, None)
             return
-
         node = self.head
         while node.next:
             node = node.next
